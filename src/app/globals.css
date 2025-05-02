@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 54 76% 64%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 54 76% 64%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 54 76% 64%;
+
+    --primary: 54 76% 64%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 54 76% 64%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 54 76% 45%;
+
+    --accent: 54 76% 64%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 54 76% 20%;
+    --input: 54 76% 20%;
+    --ring: 54 76% 64%;
+
+    --radius: 0.5rem;
+
+    /* Additional Scythra custom colors */
+    --cyan-glow: 180 100% 50%;
+    --gold-glow: 45 100% 60%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-color: black;
+    background-image:
+      radial-gradient(circle at 25% 25%, rgba(84, 76, 34, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(84, 76, 34, 0.1) 0%, transparent 50%);
+  }
+
+  /* Glowing text effects */
+  .text-cyan-glow {
+    color: hsl(var(--cyan-glow));
+    text-shadow: 0 0 10px rgba(64, 224, 208, 0.7),
+                 0 0 20px rgba(64, 224, 208, 0.5),
+                 0 0 30px rgba(64, 224, 208, 0.3);
+  }
+
+  .text-gold-glow {
+    color: hsl(var(--gold-glow));
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.7),
+                 0 0 20px rgba(255, 215, 0, 0.5),
+                 0 0 30px rgba(255, 215, 0, 0.3);
+  }
+
+  /* Glowing button effects */
+  .btn-gold-glow {
+    background: linear-gradient(45deg, #d4af37, #f5e887, #d4af37);
+    color: black;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.7),
+                0 0 20px rgba(255, 215, 0, 0.4);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .btn-gold-glow:hover {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8),
+                0 0 30px rgba(255, 215, 0, 0.5);
+    transform: translateY(-2px);
+  }
+
+  /* Gold border styles */
+  .gold-border {
+    border-color: hsl(var(--gold-glow));
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  }
+
+  /* Gold gradient */
+  .gold-gradient {
+    background: linear-gradient(45deg, #d4af37, #f5e887, #d4af37);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+  }
+
+  /* Progress bars */
+  .progress-gold::-webkit-progress-value {
+    background: linear-gradient(45deg, #d4af37, #f5e887, #d4af37);
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold relative;
+    @apply before:absolute before:h-1 before:w-24 before:bg-primary before:bottom-0 before:left-0;
+  }
+}
