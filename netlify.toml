@@ -1,6 +1,7 @@
 [images]
   remote_images = ["https://source.unsplash.com/.*", "https://images.unsplash.com/.*", "https://ext.same-assets.com/.*", "https://ugc.same-assets.com/.*"]
 
+# Standard Next.js deployment settings
 [build]
   command = "bun run build"
   publish = ".next"
@@ -10,3 +11,8 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# Static export settings (uncomment if using static export)
+# [build]
+#   command = "bun run build:static"
+#   publish = "out"

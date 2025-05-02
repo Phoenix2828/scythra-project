@@ -37,6 +37,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Ensure the app can be exported as static files if needed
+  output: process.env.NEXT_EXPORT === 'true' ? 'export' : undefined,
+  distDir: process.env.NEXT_EXPORT === 'true' ? 'out' : '.next',
 };
 
 module.exports = nextConfig;
